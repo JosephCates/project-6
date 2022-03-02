@@ -8,7 +8,7 @@ class BrevetsAPI(Resource):
         return Response(brevets, mimetype="application/json", status=200)
 
     def post(self):
-        JSONrequest = request.get_json()
-        brevet = Brevets(**JSONrequest).save()
+        body = request.get_json()
+        brevet = Brevets(**body).save()
         id = brevet.id
         return {'id': str(id)}, 200
