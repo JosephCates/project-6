@@ -194,7 +194,7 @@
               $.getJSON(DISPLAY_URL).done(
                 function(data){
                     length = data.brevets['length'];
-                    start_time = moment(data.brevets['start_time']).format("YYYY-MM-DDTHH:mm")
+                    start_time = moment(data.brevets['start_time']['$date']).utc().format("YYYY-MM-DDTHH:mm")
                     checkpoints = data.brevets['checkpoints'];
 
 
@@ -212,8 +212,8 @@
                       km[i].value = checkpoints[i]['distance'];
                       mile[i].value = (checkpoints[i]['distance'] * 0.621371).toFixed(6);;
                       location[i].value = checkpoints[i]['location'];
-                      open[i].value = moment(checkpoints[i]['open_time']).format("YYYY-MM-DDTHH:mm");
-                      close[i].value = moment(checkpoints[i]['close_time']).format("YYYY-MM-DDTHH:mm");
+                      open[i].value = moment(checkpoints[i]['open_time']['$date']).utc().format("YYYY-MM-DDTHH:mm");
+                      close[i].value = moment(checkpoints[i]['close_time']['$date']).utc().format("YYYY-MM-DDTHH:mm");
                     }
                 }
               )
