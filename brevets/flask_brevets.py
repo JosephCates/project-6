@@ -85,12 +85,12 @@ def submit():
         "start_time": JSONrequest['start_time'],
         "checkpoints": JSONrequest['checkpoints'],
     }
-    status = requests.post(f"http://api:{API_PORT}/api/Brevets", json=data)
+    status = requests.post(f"http://api:{API_PORT}/api/brevets", json=data)
     return flask.Response(status=status.status_code)
 
 @app.route("/display")
 def display():
-    data = requests.get(f"http://api:{API_PORT}/api/Brevets").json()
+    data = requests.get(f"http://api:{API_PORT}/api/brevets").json()
     return flask.jsonify(brevets={"length": data[-1]['length'], "start_time": data[-1]['start_time'], "checkpoints": data[-1]['checkpoints']}, status=200)
 #############
 
