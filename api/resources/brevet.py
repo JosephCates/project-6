@@ -9,7 +9,7 @@ class BrevetAPI(Resource):
         return Response(brevet, mimetype="application/json", status=200)
 
     def put(self, id):
-        body = request.json()
+        body = request.get_json()
         Brevets.objects.get(id=id).update(**body)
         return {'id': str(id), 'status': 'updated'}, 200
 
