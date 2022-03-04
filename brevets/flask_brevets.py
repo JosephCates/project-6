@@ -86,6 +86,7 @@ def submit():
         "checkpoints": JSONrequest['checkpoints'],
     }
     status = requests.post(f"http://api:{API_PORT}/api/brevets", json=data)
+    print("status code:", status.status_code)
     return flask.Response(status=status.status_code)
 
 @app.route("/display")
