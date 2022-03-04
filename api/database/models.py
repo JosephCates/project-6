@@ -1,6 +1,8 @@
 from mongoengine import *
 
 
+
+
 class Checkpoint(EmbeddedDocument):
     """
     A MongoEngine EmbeddedDocument containing:

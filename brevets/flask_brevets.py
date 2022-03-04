@@ -80,11 +80,13 @@ def _calc_times():
 @app.route("/submit", methods=['POST'])
 def submit():
     JSONrequest = request.get_json()
+
     data = {
         "length": JSONrequest['length'],
         "start_time": JSONrequest['start_time'],
         "checkpoints": JSONrequest['checkpoints'],
     }
+    
     status = requests.post(f"http://api:{API_PORT}/api/brevets", json=data)
     print("status code:", status.status_code)
     return flask.Response(status=status.status_code)

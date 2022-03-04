@@ -1,6 +1,6 @@
+nose
 arrow
 Flask
-nose
 pymongo
 mongoengine
 requests

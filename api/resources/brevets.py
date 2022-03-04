@@ -2,6 +2,8 @@ from flask import Response, request
 from database import Brevets
 from flask_restful import Resource
 
+
+
 class BrevetsAPI(Resource):
     def get(self):
         brevets = Brevets.objects().to_json()

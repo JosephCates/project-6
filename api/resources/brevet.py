@@ -3,6 +3,8 @@ from database.models import Brevets
 from flask_restful import Resource
 
 
+
+
 class BrevetAPI(Resource):
     def get(self, id):
         brevet = Brevets.objects.get(id=id).to_json()
