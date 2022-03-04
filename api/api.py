@@ -8,7 +8,7 @@ from mongoengine import connect
 from resources import BrevetAPI
 from resources import BrevetsAPI
 
-API_PORT = os.environ.get('API_PORT')
+API_PORT = os.environ.get('PORT')
 
 
 app = Flask(__name__)
